@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "author": "brandon b",
   "license": "ISC",
@@ -16,6 +19,9 @@
     "jsonschema": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.5.1"
+    },
+    "engines": {
+      "node": "12.18.3"
     },
   "devDependencies": {
     "jest": "^26.6.3",

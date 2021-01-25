@@ -1,4 +1,4 @@
-\c recipeclub;
+-- \c recipeclub;
 -- \c recipeclub_test;
 
 DROP TABLE IF EXISTS instructions;
@@ -77,8 +77,8 @@ CREATE TABLE ratings (
     PRIMARY KEY (users_username, recipe_id)
 );
 
-INSERT INTO users (username, password, email, is_admin)
-VALUES ( 'admin', '$2b$12$nhJHieoFEnLYbXVAo1BbEezN0wmY/klGFn/qbeRFoUvp7aEgmzsuu', 'email', true );
+-- INSERT INTO users (username, password, email, is_admin)
+-- VALUES ( 'admin', '$2b$12$nhJHieoFEnLYbXVAo1BbEezN0wmY/klGFn/qbeRFoUvp7aEgmzsuu', 'email', true );
 
 -- ALTER TABLE users 
 -- ADD users_recipes REFERENCES recipes ON DELETE CASCADE,
