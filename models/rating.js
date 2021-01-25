@@ -1,4 +1,3 @@
-const { CustomConsole } = require("@jest/console");
 const db = require("../db");
 const ExpressError = require("../helpers/expressError");
 
