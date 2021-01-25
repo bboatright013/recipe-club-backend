@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "instructionsArray": [
+                {
+                    "order_num": "1",
+                    "instruction": "first instruction"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "instructionsArray"
+    ],
+    "properties": {
+        "instructionsArray": {
+            "$id": "#/properties/instructionsArray",
+            "type": "array",
+            "title": "The instructionsArray schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "order_num": "1",
+                        "instruction": "first instruction"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/instructionsArray/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/instructionsArray/items/anyOf",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "order_num": "1",
+                                "instruction": "first instruction"
+                            }
+                        ],
+                        "required": [
+                            "order_num",
+                            "instruction"
+                        ],
+                        "properties": {
+                            "order_num": {
+                                "$id": "#/properties/instructionsArray/items/anyOf/0/properties/order_num",
+                                "type": "string",
+                                "title": "The order_num schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "instruction": {
+                                "$id": "#/properties/instructionsArray/items/anyOf/0/properties/%20instruction",
+                                "type": "string",
+                                "title": "The  instruction schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "first instruction"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "ingredientsArray": [
+                {
+                    "order_num": "1",
+                    "ingredient": "first ingredient"
+                }
+            ]
+        }
+    ],
+    "required": [
+        "ingredientsArray"
+    ],
+    "properties": {
+        "ingredientsArray": {
+            "$id": "#/properties/ingredientsArray",
+            "type": "array",
+            "title": "The ingredientsArray schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "order_num": "1",
+                        "ingredient": "first ingredient"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/ingredientsArray/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/ingredientsArray/items/anyOf",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "order_num": "1",
+                                "ingredient": "first ingredient"
+                            }
+                        ],
+                        "required": [
+                            "order_num",
+                            "ingredient"
+                        ],
+                        "properties": {
+                            "order_num": {
+                                "$id": "#/properties/ingredientsArray/items/anyOf/0/properties/order_num",
+                                "type": "string",
+                                "title": "The order_num schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            },
+                            "ingredient": {
+                                "$id": "#/properties/ingredientsArray/items/anyOf/0/properties/%20ingredient",
+                                "type": "string",
+                                "title": "The ingredient schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "first ingredient"
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
