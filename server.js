@@ -3,11 +3,11 @@
 
 const app = require("./app");
 const cors = require('cors');
-
+const port = process.env.PORT || 3001; 
 app.use(cors());
 
-app.listen(process.env.PORT || 3001, () => {
+app.listen(port, () => {
 
-    console.log(`Server starting`);
+    console.log(`Server starting on ${port}`);
   }
 );
