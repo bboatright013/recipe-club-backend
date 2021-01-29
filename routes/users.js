@@ -68,7 +68,7 @@ async function(req,res,next) {
       console.log(fields);
       delete fields._userToken;
       let user = await User.update(req.params.username, fields);
-      return res.json({ user });
+      return res.json(user);
     } else {
       throw new ExpressError('Only that user or admin can edit a user.', 401);
     }
